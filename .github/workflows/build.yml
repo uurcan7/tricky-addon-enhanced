@@ -124,7 +124,7 @@ jobs:
           submodules: recursive
 
       - name: Download build artifacts
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v8
         with:
           path: artifacts
 
@@ -241,12 +241,12 @@ jobs:
           ver=$(grep '^version=' module.prop | cut -d= -f2)
           echo "version=${ver}" >> "$GITHUB_OUTPUT"
 
-      - uses: actions/download-artifact@v4
+      - uses: actions/download-artifact@v8
         with:
           name: ta-enhanced-release-zip
           path: zips/release
 
-      - uses: actions/download-artifact@v4
+      - uses: actions/download-artifact@v8
         with:
           name: ta-enhanced-debug-zip
           path: zips/debug
