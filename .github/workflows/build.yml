@@ -109,7 +109,7 @@ jobs:
         env:
           TARGET: ${{ matrix.target }}
 
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         with:
           name: bin-${{ matrix.abi }}-${{ matrix.profile }}
           path: rust/target/${{ matrix.target }}/${{ matrix.profile }}/ta-enhanced
@@ -214,13 +214,13 @@ jobs:
           mv release/*-debug.zip release/dbg/ 2>/dev/null || true
           mv release/*.zip release/rel/ 2>/dev/null || true
 
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         with:
           name: ta-enhanced-release-zip
           path: release/rel/*.zip
           retention-days: 30
 
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         with:
           name: ta-enhanced-debug-zip
           path: release/dbg/*.zip
